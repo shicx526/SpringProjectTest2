@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="bean1" class="com.scx.spring.class005.Bean1" />-->
+<!--    name支持多个别名-->
+    <bean id="bean1" class="com.scx.spring.class005.Bean1" name="bean1_1,bean1_2"/>
+<!--    alias仅支持一个别名-->
+    <alias name="bean1" alias="bean1_3"/>
+
+    <bean id="bean2" class="com.scx.spring.class005.Bean2Factory" factory-method="getBean2"/>
+
+    <bean id="bean3Factory" class="com.scx.spring.class005.Bean3Factory" />
+    <bean id="bean3" class="com.scx.spring.class005.Bean3" factory-bean="bean3Factory"
+          factory-method="getBean3"/>
+</beans>
